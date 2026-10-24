@@ -1,3 +1,40 @@
+
+
+# 🔢 DigitVision AI — Handwritten Digit Recognition
+
+## 🚀 Live Application
+
+👉 [Click Here to Launch DigitVision AI](https://mnist-transfer-learning-mxwxdyytvvjsgw6adbt5mr.streamlit.app/)
+
+### Features
+- CNN-based handwritten digit recognition
+- Single-digit recognition (0–9)
+- Double-digit recognition (e.g., 12, 25, 88)
+- Model accuracy evaluation
+- Confusion matrix visualisation
+- Professional Streamlit interface
+
+
+GitHub repository: MNIST-Transfer-Learning
+Features
+- Single-digit classification (0–9)
+- Multi-digit recognition using digit separation
+- Image upload and per-digit prediction previews
+- Confidence scores for detected digits
+- Dark blue Streamlit interface
+- CNN model evaluation and confusion matrix (where available)
+Testing the app
+1. Open the live app.
+2. Upload a PNG or JPG showing one digit or two separated digits.
+3. Review the predicted number and each digit's confidence.
+4. Test different handwriting styles, backgrounds and spacing.
+The single- and double-digit test image pack shared in ChatGPT can be added to this repository as a test_data/ folder. Once those images are committed, add this link to the README:
+
+[Browse test images](./test_data/)
+Accuracy note: Any reported 99% accuracy should be labelled with the dataset and split on which it was measured (for example, MNIST held-out test accuracy). Performance on uploaded handwriting and multi-digit images may differ.
+
+
+
 # 🔢 DigitVision AI Studio — Rebuilt CNN
 
 A navy-blue Streamlit application for recognising handwritten **single digits and separated multi-digit numbers**. The project introduces a dedicated CNN rather than reusing the old MobileNetV2 input pipeline.
