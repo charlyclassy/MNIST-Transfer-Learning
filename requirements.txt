@@ -1,0 +1,6 @@
+streamlit>=1.38,<2
+numpy>=1.26,<3
+Pillow>=10,<12
+opencv-python-headless>=4.9,<5
+tensorflow>=2.16,<2.21
+scikit-learn>=1.4,<2
