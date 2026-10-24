@@ -55,8 +55,23 @@ with st.sidebar:
     st.markdown("**Output:** 10 digit probabilities")
 
 @st.cache_resource(show_spinner="Loading saved neural network…")
+from pathlib import Path
+
+@st.cache_resource
 def load_model(path):
-    return tf.keras.models.load_model(path, compile=False)
+    model_path = Path(__file__).resolve().parent / path
+
+    if not model_path.is_file():
+        raise FileNotFoundError(
+            f"Model not found: {model_path}. "
+            f"Available files: "
+            f"{[p.name for p in model_path.parent.iterdir()]}"
+        )
+
+    return tf.keras.models.load_model(
+        str(model_path),
+        compile=False
+    )
 
 model_path = CHECKPOINTS[selected_name]
 if not os.path.isfile(model_path):
