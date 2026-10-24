@@ -4,8 +4,20 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-# Page title
-st.title("MNIST Handwritten Digit Recognition")
+# Professional page title
+st.markdown("""
+<div class="mnist-hero">
+    <h1>🧠 DigitVision AI</h1>
+    <p>
+        Handwritten Digit Recognition using
+        Deep Learning and Transfer Learning
+    </p>
+    <p>
+        Upload a handwritten digit and discover
+        how AI recognises numbers from 0 to 9.
+    </p>
+</div>
+""", unsafe_allow_html=True)
 
 st.write(
     "This application uses MobileNetV2 transfer learning "
