@@ -20,6 +20,51 @@ MODELS = {
 
 st.set_page_config(page_title="DigitVision AI | Multi-digit", page_icon="🔢", layout="wide", initial_sidebar_state="expanded")
 
+# Professional dark blue theme
+st.markdown("""
+<style>
+.stApp {
+    background: linear-gradient(
+        135deg, #0B1020, #151D35
+    ) !important;
+    color: #F8FAFC !important;
+}
+
+[data-testid="stSidebar"] {
+    background-color: #16243E !important;
+}
+
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #FFFFFF !important;
+}
+
+[data-testid="stMetric"] {
+    background-color: #1E293B !important;
+    border: 1px solid #475569 !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+}
+
+[data-testid="stMetricLabel"] *,
+[data-testid="stMetricValue"] * {
+    color: #FFFFFF !important;
+}
+
+.stButton > button {
+    background: linear-gradient(
+        90deg, #6366F1, #7C3AED
+    ) !important;
+    color: white !important;
+    border-radius: 12px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # Fix metric card text visibility
 st.markdown("""
 <style>
