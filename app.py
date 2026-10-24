@@ -6,20 +6,43 @@ from PIL import Image, ImageOps, UnidentifiedImageError
 
 st.set_page_config(page_title='DigitVision AI | MNIST', page_icon='🧠', layout='wide', initial_sidebar_state='expanded')
 ROOT = Path(__file__).resolve().parent
-st.markdown('''<style>
-.stApp{background:#0b1220;color:#e9efff}
-.block-container{max-width:1180px;padding-top:2rem;padding-bottom:3rem}
-.hero{background:linear-gradient(125deg,#192f59,#332474);border:1px solid #44557e;border-radius:24px;padding:40px 35px;margin-bottom:24px;box-shadow:0 12px 42px #03081855}
-.hero h1{color:#fff;font-size:clamp(2rem,4vw,3rem);margin:0 0 8px 0}.hero p{color:#cbd5f5;font-size:1.08rem;margin:0}
-.eyebrow{letter-spacing:2px;color:#b4adff;font-size:.75rem;font-weight:700;margin-bottom:14px}
-.section-heading{font-size:1.3rem;font-weight:700;color:#f1f5ff;margin:10px 0 16px}
-.stButton>button[kind="primary"]{background:#7065f0;color:white;border:0;border-radius:12px;font-weight:700;min-height:3rem}
-[data-testid="stFileUploader"]{border:1px dashed #8691ce;border-radius:16px;padding:10px}
-[data-testid="stMetric"]{border:1px solid #3b4a68;background:#1b2b45;border-radius:14px;padding:14px}
-[data-testid="stSidebar"]{background:#121d32}
-[data-testid="stImage"] img{border-radius:13px}
-.footer{text-align:center;color:#91a1bd;font-size:.82rem;padding-top:24px}
-</style>''',unsafe_allow_html=True)
+
+# Fix sidebar text visibility
+st.markdown("""
+<style>
+/* Sidebar background */
+[data-testid="stSidebar"] {
+    background-color: #111B30 !important;
+}
+
+/* All normal sidebar text */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] label,
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] li {
+    color: #F8FAFC !important;
+}
+
+/* Radio button labels */
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"],
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+    color: #F8FAFC !important;
+}
+
+/* Captions and secondary information */
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+    color: #CBD5E1 !important;
+}
+
+/* Help text */
+[data-testid="stSidebar"] small {
+    color: #CBD5E1 !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 st.markdown('''<div class="hero"><div class="eyebrow">DEEP LEARNING · TRANSFER LEARNING</div><h1>🧠 DigitVision AI</h1><p>Recognise handwritten digits from 0 to 9 with your original fine-tuned MobileNetV2 network.</p></div>''',unsafe_allow_html=True)
 
