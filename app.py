@@ -19,24 +19,39 @@ MODELS = {
 }
 
 st.set_page_config(page_title="DigitVision AI | Multi-digit", page_icon="🔢", layout="wide", initial_sidebar_state="expanded")
+
+# Fix metric card text visibility
 st.markdown("""
 <style>
-.stApp {background:linear-gradient(135deg,#0b1223 0%,#121d35 55%,#172245 100%);color:#f8fafc}
-.block-container {max-width:1200px;padding-top:2rem;padding-bottom:3rem}
-[data-testid="stSidebar"] {background:#121e34 !important}
-[data-testid="stSidebar"] p,[data-testid="stSidebar"] span,[data-testid="stSidebar"] label,[data-testid="stSidebar"] h1,[data-testid="stSidebar"] h2,[data-testid="stSidebar"] h3 {color:#eef2ff !important}
-[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {color:#cbd5e1 !important}
-.dv-hero {background:linear-gradient(110deg,#243b72,#44268d);border:1px solid #5260a6; padding:34px 36px;border-radius:22px;margin-bottom:26px;box-shadow:0 14px 35px #03071250}
-.dv-hero h1 {color:#fff!important;font-size:2.45rem;margin:0 0 10px;font-weight:800}
-.dv-hero p {color:#e0e7ff;font-size:1.04rem;margin:0}
-.dv-card {background:#192742;border:1px solid #344666;border-radius:18px;padding:20px;margin:10px 0}
-.dv-eyebrow {color:#b4c6ff;font-weight:700;letter-spacing:.1em;font-size:.8rem}
-.dv-number {font-size:3.6rem;font-weight:800;color:#fff;letter-spacing:.06em;overflow-wrap:anywhere}
-.stButton>button[kind="primary"] {background:#6755ec;color:white;border-radius:12px;border:0;font-weight:700}
-[data-testid="stFileUploader"] {border-radius:15px;background:#1b2b48;border:1px dashed #7c83ed;padding:12px}
-[data-testid="stMetric"] {background:#1c2b48;border:1px solid #41567d;padding:12px;border-radius:13px}
+/* Metric card background */
+[data-testid="stMetric"] {
+    background-color: #1E293B !important;
+    border: 1px solid #475569 !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+}
+
+/* Metric labels */
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] p {
+    color: #CBD5E1 !important;
+    opacity: 1 !important;
+}
+
+/* Large metric values */
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] > div {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+/* Metric descriptions */
+[data-testid="stMetric"] [data-testid="stMetricDelta"] {
+    color: #A5B4FC !important;
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 @st.cache_resource(show_spinner="Loading your trained CNN checkpoint…")
 def load_checkpoint(filename: str):
