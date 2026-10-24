@@ -55,11 +55,8 @@ with st.sidebar:
     st.markdown('**Task:** MNIST handwritten digit classification')
     st.markdown('**Input:** 32 × 32, RGB, values −1 to 1')
     st.markdown('**Output:** 10 digit probabilities')
-    st.caption('These are your original saved models, not newly trained demo weights.')
-    st.divider()
-    st.info('Tip: Try a large, centered digit on a dark background with bright handwriting, similar to MNIST.')
-
-@st.cache_resource(show_spinner='Loading original trained model…')
+        st.divider()
+   @st.cache_resource(show_spinner='Loading original trained model…')
 def load_model(filename):
     path=ROOT / filename
     if not path.exists():
